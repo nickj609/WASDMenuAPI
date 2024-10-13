@@ -58,34 +58,37 @@ public class WASDMenuAPI : BasePlugin
     {
         foreach (var player in Players.Values.Where(p => p.MainMenu != null))
         {
-            if ((player.Buttons & PlayerButtons.Forward) == 0 && (player.player.Buttons & PlayerButtons.Forward) != 0)
+            if(player != null && player.player != null)
             {
-                player.ScrollUp();
-            }
-            else if((player.Buttons & PlayerButtons.Back) == 0 && (player.player.Buttons & PlayerButtons.Back) != 0)
-            {
-                player.ScrollDown();
-            }
-            else if((player.Buttons & PlayerButtons.Moveright) == 0 &&(player.player.Buttons & PlayerButtons.Moveright) != 0)
-            {
-                player.Choose();
-            } else if ((player.Buttons & PlayerButtons.Moveleft) == 0 && (player.player.Buttons & PlayerButtons.Moveleft) != 0)
-            {
-                player.CloseSubMenu();
-            }
+                if ((player.Buttons & PlayerButtons.Forward) == 0 && (player.player?.Buttons & PlayerButtons.Forward) != 0)
+                {
+                    player.ScrollUp();
+                }
+                else if((player.Buttons & PlayerButtons.Back) == 0 && (player.player?.Buttons & PlayerButtons.Back) != 0)
+                {
+                    player.ScrollDown();
+                }
+                else if((player.Buttons & PlayerButtons.Moveright) == 0 &&(player.player?.Buttons & PlayerButtons.Moveright) != 0)
+                {
+                    player.Choose();
+                } else if ((player.Buttons & PlayerButtons.Moveleft) == 0 && (player.player?.Buttons & PlayerButtons.Moveleft) != 0)
+                {
+                    player.CloseSubMenu();
+                }
+                if (player.player?.Buttons != null)
+                {
+                    if (((long)player.player.Buttons & 8589934592) == 8589934592)
+                    { 
+                        player.OpenMainMenu(null);
+                    }
 
-            if (((long)player.player.Buttons & 8589934592) == 8589934592)
-            { 
-                player.OpenMainMenu(null);
+                    player.Buttons = player.player.Buttons;
+                    if(player.CenterHtml != "")
+                        Server.NextFrame(() =>
+                        player.player.PrintToCenterHtml(player.CenterHtml)
+                    );
+                } 
             }
-            
-            player.Buttons = player.player.Buttons;
-            if(player.CenterHtml != "")
-                Server.NextFrame(() =>
-                player.player.PrintToCenterHtml(player.CenterHtml)
-            );
         }
     }
-    
-    
 }

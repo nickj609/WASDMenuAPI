@@ -1,0 +1,15 @@
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\bin\Debug\net8.0\WASDMenuAPI.deps.json
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\bin\Debug\net8.0\WASDMenuAPI.dll
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\bin\Debug\net8.0\WASDMenuAPI.pdb
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\bin\Debug\net8.0\WASDSharedAPI.dll
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\WASDMenuAPI.csproj.AssemblyReference.cache
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\WASDMenuAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\WASDMenuAPI.AssemblyInfoInputs.cache
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\WASDMenuAPI.AssemblyInfo.cs
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\WASDMenuAPI.csproj.CoreCompileInputs.cache
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\WASDMenuAPI.sourcelink.json
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\WASDMenu.82A05A17.Up2Date
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\WASDMenuAPI.dll
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\refint\WASDMenuAPI.dll
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\WASDMenuAPI.pdb
+C:\Users\nickj\OneDrive\Documents\CS2\plugins\WASDMenuAPI\WASDMenuAPI\obj\Debug\net8.0\ref\WASDMenuAPI.dll

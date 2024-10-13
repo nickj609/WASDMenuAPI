@@ -1,7 +1,7 @@
 {
-  "menu.selection.left": "<img src='https://raw.githubusercontent.com/oqyh/cs2-Kill-Sound-GoldKingZ/main/Resources/left.gif' class=''>",
-  "menu.selection.right": "<img src='https://raw.githubusercontent.com/oqyh/cs2-Kill-Sound-GoldKingZ/main/Resources/right.gif' class=''>",
-  "menu.title.prefix": "<font color='green'>",
-  "menu.more.options.below": "<img src='https://raw.githubusercontent.com/oqyh/cs2-Kill-Sound-GoldKingZ/main/Resources/arrow.gif' class=''> <img src='https://raw.githubusercontent.com/oqyh/cs2-Kill-Sound-GoldKingZ/main/Resources/arrow.gif' class=''> <img src='https://raw.githubusercontent.com/oqyh/cs2-Kill-Sound-GoldKingZ/main/Resources/arrow.gif' class=''>",
-  "menu.bottom.text": "           <font color='cyan'>[ WASD - To Move ]</font> <br><font color='purple'>[ <img src='https://raw.githubusercontent.com/oqyh/cs2-Kill-Sound-GoldKingZ/main/Resources/tab.gif' class=''> - To Exit ]"
+  "menu.selection.left": "<span style='font color='red''>&#11166; [ </span>",
+  "menu.selection.right": "<span style='font color='red''> ] &#11164;</span>",
+  "menu.title.prefix": "<font color='red'>",
+  "menu.more.options.below": "<center><span style='color: white;'>GameModeManager by </span><span style='color: gold;'>Striker-Nick</span></center>",
+  "menu.bottom.text": "<center><p style='color: red;'>Move: <span style='color: gold;'>WASD</span> <span style='color: white;'>|</span> Select: <span style='color: gold;'>Jump</span> <span style='color: white;'>|</span> Exit: <span style='color: gold;'>TAB</span></p></center>"
 }

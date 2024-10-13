@@ -10,7 +10,7 @@ namespace WASDMenuAPI;
 
 public class WasdMenuPlayer
 {
-    public CCSPlayerController player { get; set; }
+    public CCSPlayerController? player { get; set; }
     public WasdMenu? MainMenu = null;
     public LinkedListNode<IWasdMenuOption>? CurrentChoice = null;
     public LinkedListNode<IWasdMenuOption>? MenuStart = null;
@@ -89,7 +89,10 @@ public class WasdMenuPlayer
     
     public void Choose()
     {
-        CurrentChoice?.Value.OnChoose?.Invoke(player, CurrentChoice.Value);
+        if (player != null)
+        {
+            CurrentChoice?.Value.OnChoose?.Invoke(player, CurrentChoice.Value);
+        }
     }
 
     public void ScrollDown()
@@ -124,20 +127,24 @@ public class WasdMenuPlayer
 
         StringBuilder builder = new StringBuilder();
         int i = 0;
+        int n = 0;
+
         LinkedListNode<IWasdMenuOption>? option = MenuStart!;
-        if (option.Value.Parent?.Title != "")
-        {
-            builder.AppendLine($"{Localizer?["menu.title.prefix"]}{option.Value.Parent?.Title}</u><font color='white'><br>");
-        }
 
         while (i < VisibleOptions && option != null )
         {
+            if (option.Value.Parent?.Title != "")
+            {
+                builder.AppendLine($"{Localizer?["menu.title.prefix"]}{option.Value.Parent?.Title}</u><font color='white'> Item: {n}/{MainMenu.Options?.Count}<br>");
+            }
+            
             if (option == CurrentChoice)
                 builder.AppendLine($"{Localizer?["menu.selection.left"]} {option.Value.OptionDisplay} {Localizer?["menu.selection.right"]} <br>");
             else
                 builder.AppendLine($"{option.Value.OptionDisplay} <br>");
             option = option.Next;
             i++;
+            n++;
         }
 
         if (option != null) { // more options
