@@ -13,14 +13,7 @@ namespace WASDMenuAPI;
 // Declare class
 public class WasdMenuPlayer
 {
-<<<<<<< Updated upstream
-    public CCSPlayerController? player { get; set; }
-    public WasdMenu? MainMenu = null;
-    public LinkedListNode<IWasdMenuOption>? CurrentChoice = null;
-    public LinkedListNode<IWasdMenuOption>? MenuStart = null;
-=======
     // Define properties
->>>>>>> Stashed changes
     public string CenterHtml = "";
     public int VisibleOptions = 5;
     public WasdMenu? MainMenu = null;
