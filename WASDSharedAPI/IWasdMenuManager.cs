@@ -1,19 +1,22 @@
-﻿using CounterStrikeSharp.API.Core;
+﻿// Included libraries
+using CounterStrikeSharp.API.Core;
 
+// Declare namespace
 namespace WASDSharedAPI;
 
+// Declare interface
 public interface IWasdMenuManager
 {
-    //open the menu as main menu
+    // Opens the menu as a main menu
     public void OpenMainMenu(CCSPlayerController? player, IWasdMenu? menu);
-    //close all menus
+    // Closes all menus
     public void CloseMenu(CCSPlayerController? player);
-    //close current submenu and go to previous menu/submenu
+    // Closes current submenu and goes back to previous menu/submenu
     public void CloseSubMenu(CCSPlayerController? player);
-    //close all submenus and go to main menu
+    // Closes all submenus and goes back to the main menu
     public void CloseAllSubMenus(CCSPlayerController? player);
-    //open menu as submenu
+    // Opens menu as a submenu
     public void OpenSubMenu(CCSPlayerController? player, IWasdMenu? menu);
-    //create new menu object
+    // Creates a new menu object
     public IWasdMenu CreateMenu(string title = "");
 }

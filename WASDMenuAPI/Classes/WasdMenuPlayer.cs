@@ -1,24 +1,36 @@
-﻿using System.Text;
+﻿// Included libraries
+using System.Text;
+using WASDSharedAPI;
+using WASDMenuAPI.Classes;
 using System.Text.Json.Nodes;
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using Microsoft.Extensions.Localization;
-using WASDMenuAPI.Classes;
-using WASDSharedAPI;
 
+// Declare namespace
 namespace WASDMenuAPI;
 
+// Declare class
 public class WasdMenuPlayer
 {
+<<<<<<< Updated upstream
     public CCSPlayerController? player { get; set; }
     public WasdMenu? MainMenu = null;
     public LinkedListNode<IWasdMenuOption>? CurrentChoice = null;
     public LinkedListNode<IWasdMenuOption>? MenuStart = null;
+=======
+    // Define properties
+>>>>>>> Stashed changes
     public string CenterHtml = "";
     public int VisibleOptions = 5;
-    public static IStringLocalizer? Localizer = null;
+    public WasdMenu? MainMenu = null;
     public PlayerButtons Buttons { get; set; }
+    public static IStringLocalizer? Localizer = null;
+    public required CCSPlayerController player { get; set; }
+    public LinkedListNode<IWasdMenuOption>? MenuStart = null;
+    public LinkedListNode<IWasdMenuOption>? CurrentChoice = null;
 
+    // Define methods
     public void OpenMainMenu(WasdMenu? menu)
     {
         if (menu == null)
@@ -130,6 +142,13 @@ public class WasdMenuPlayer
         int n = 0;
 
         LinkedListNode<IWasdMenuOption>? option = MenuStart!;
+<<<<<<< Updated upstream
+=======
+        if (option.Value.Parent?.Title != "")
+        {
+            builder.AppendLine($"{Localizer?["menu.title.prefix"]}{option?.Value?.Parent?.Title}</font> <font class='fontSize-s stratum-bold-italic'>{CurrentChoice?.Value?.Index+1}/{MainMenu?.Options?.Count-1}</font></font><br>");
+        }
+>>>>>>> Stashed changes
 
         while (i < VisibleOptions && option != null )
         {
@@ -139,22 +158,30 @@ public class WasdMenuPlayer
             }
             
             if (option == CurrentChoice)
-                builder.AppendLine($"{Localizer?["menu.selection.left"]} {option.Value.OptionDisplay} {Localizer?["menu.selection.right"]} <br>");
+            {
+                builder.AppendLine($"{Localizer?["menu.selection.left"]} <font class='fontSize-m' color='white'>{option.Value.OptionDisplay}</font> {Localizer?["menu.selection.right"]}<br>");
+            }
             else
-                builder.AppendLine($"{option.Value.OptionDisplay} <br>");
+            {
+                builder.AppendLine($"<font class='fontSize-m' color='white'>{option.Value.OptionDisplay}</font><br>");
+            }
+
             option = option.Next;
             i++;
             n++;
         }
 
-        if (option != null) { // more options
-            builder.AppendLine(
-                $"{Localizer?["menu.more.options.below"]}");
+        if (option != null && Localizer != null && Localizer["menu.more.options.below"] != "") // more options string.
+        { 
+            builder.AppendLine($"{Localizer?["menu.more.options.below"]} <br>");
+        }
+        
+        if(option != null && (option?.Value?.Index.Equals(MainMenu?.Options?.Last) ?? false))
+        {
+            builder.Append($"<br>");
         }
 
-        builder.AppendLine("<br>" +
-                           $"{Localizer?["menu.bottom.text"]}<br>");
-        builder.AppendLine("</div>");
+        builder.AppendLine($"{Localizer?["menu.bottom.text"]}");
         CenterHtml = builder.ToString();
     }
 }

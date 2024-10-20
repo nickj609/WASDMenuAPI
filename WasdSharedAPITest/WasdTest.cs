@@ -1,24 +1,45 @@
-﻿using CounterStrikeSharp.API.Core;
-using CounterStrikeSharp.API.Core.Attributes.Registration;
-using CounterStrikeSharp.API.Core.Capabilities;
-using CounterStrikeSharp.API.Modules.Commands;
+﻿// Included libraries
 using WASDSharedAPI;
+using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Modules.Commands;
+using CounterStrikeSharp.API.Core.Capabilities;
+using CounterStrikeSharp.API.Core.Attributes.Registration;
 
+// Declare namespace
 namespace WasdSharedAPITest;
 
+// Declare class
 public class WasdTest : BasePlugin
 {
+    // Define plugin properties
     public override string ModuleName => "WasdMenuTest";
     public override string ModuleVersion => "1.0.0";
     public override string ModuleAuthor => "Interesting";
-
     public static IWasdMenuManager? MenuManager;
-    
+
+    // Define on load behavior
     public override void Load(bool hotReload)
     {
         
     }
 
+    // Define on all plugins loaded behavior
+    public override void OnAllPluginsLoaded(bool hotReload)
+    {
+        // Ensure WASDSharedAPI is loaded
+        try
+        {
+            if (_pluginState.CustomVotesApi.Get() is null)
+                return;
+        }
+        catch (Exception)
+        {
+            Logger.LogWarning("WASDSharedAPI plugin not found. WASD menus will not be work.");
+            return;
+        }   
+    }
+
+    // Define methods
     public IWasdMenuManager? GetMenuManager()
     {
         if (MenuManager == null)

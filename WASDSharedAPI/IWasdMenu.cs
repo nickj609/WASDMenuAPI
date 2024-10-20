@@ -1,10 +1,13 @@
-﻿using CounterStrikeSharp.API.Core;
+﻿// Included libraries
+using CounterStrikeSharp.API.Core;
 
+// Declare namespace
 namespace WASDSharedAPI;
 
+// Declare interface
 public interface IWasdMenu
 {
-    public string? Title { get; set; }
+    public string Title { get; set; }
     public LinkedList<IWasdMenuOption>? Options { get; set; }
     // previous option node
     public LinkedListNode<IWasdMenuOption>? Prev { get; set; }

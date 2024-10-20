@@ -1,8 +1,11 @@
-﻿using CounterStrikeSharp.API.Core;
+﻿// Included libraries
 using WASDSharedAPI;
+using CounterStrikeSharp.API.Core;
 
+// Declare namespace
 namespace WASDMenuAPI.Classes;
 
+// Define class
 public class WasdManager : IWasdMenuManager
 {
     public void OpenMainMenu(CCSPlayerController? player, IWasdMenu? menu)

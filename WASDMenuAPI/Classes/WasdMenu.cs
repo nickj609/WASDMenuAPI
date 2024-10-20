@@ -1,8 +1,11 @@
-﻿using CounterStrikeSharp.API.Core;
+﻿// Included libraries
 using WASDSharedAPI;
+using CounterStrikeSharp.API.Core;
 
+// Declare namespace
 namespace WASDMenuAPI.Classes;
 
+// Define class
 public class WasdMenu : IWasdMenu
 {
     public string? Title { get; set; } = "";

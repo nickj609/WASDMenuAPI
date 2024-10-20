@@ -1,30 +1,34 @@
-﻿using CounterStrikeSharp.API;
-using CounterStrikeSharp.API.Core;
-using CounterStrikeSharp.API.Core.Attributes.Registration;
-using CounterStrikeSharp.API.Core.Capabilities;
-using CounterStrikeSharp.API.Modules.Commands;
-using CounterStrikeSharp.API.Modules.Menu;
-using WASDMenuAPI.Classes;
+﻿// Included libraries
 using WASDSharedAPI;
+using WASDMenuAPI.Classes;
+using CounterStrikeSharp.API;
+using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Modules.Menu;
+using CounterStrikeSharp.API.Modules.Commands;
+using CounterStrikeSharp.API.Core.Capabilities;
+using CounterStrikeSharp.API.Core.Attributes.Registration;
 
+// Declare namespace
 namespace WASDMenuAPI;
 
+// Define class
 public class WASDMenuAPI : BasePlugin
 {
+    // Define plugin properties
     public override string ModuleName => "WASDMenuAPI";
     public override string ModuleVersion => "1.0.2";
     public override string ModuleAuthor => "Interesting";
-
     public static readonly Dictionary<int, WasdMenuPlayer> Players = new();
-
-    public static PluginCapability<IWasdMenuManager> WasdMenuManagerCapability =
-        new ("wasdmenu:manager");
+    public static PluginCapability<IWasdMenuManager> WasdMenuManagerCapability = new ("wasdmenu:manager");
     
+    // Define on load behavior
     public override void Load(bool hotReload)
     {
-        var wasdMenuManager = new WasdManager();
         WasdMenuPlayer.Localizer = Localizer;
+        var wasdMenuManager = new WasdManager();
         Capabilities.RegisterPluginCapability(WasdMenuManagerCapability, () => wasdMenuManager);
+
+        // Register event handlers
         RegisterEventHandler<EventPlayerActivate>((@event, info) =>
         {
             if (@event.Userid != null)
@@ -41,8 +45,10 @@ public class WASDMenuAPI : BasePlugin
             return HookResult.Continue;
         });
         
+        // Register listeners
         RegisterListener<Listeners.OnTick>(OnTick);
         
+        // Hot reload behavior
         if(hotReload)
             foreach (var pl in Utilities.GetPlayers())
             {
@@ -54,6 +60,7 @@ public class WASDMenuAPI : BasePlugin
             }
     }
 
+    // Define method for OnTick actions
     public void OnTick()
     {
         foreach (var player in Players.Values.Where(p => p.MainMenu != null))
