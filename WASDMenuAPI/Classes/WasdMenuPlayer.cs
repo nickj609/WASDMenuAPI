@@ -135,31 +135,23 @@ public class WasdMenuPlayer
         int n = 0;
 
         LinkedListNode<IWasdMenuOption>? option = MenuStart!;
-<<<<<<< Updated upstream
-=======
         if (option.Value.Parent?.Title != "")
         {
-            builder.AppendLine($"{Localizer?["menu.title.prefix"]}{option?.Value?.Parent?.Title}</font> <font class='fontSize-s stratum-bold-italic'>{CurrentChoice?.Value?.Index+1}/{MainMenu?.Options?.Count-1}</font></font><br>");
+            builder.AppendLine($"{Localizer?["menu.title.prefix"]}{option?.Value?.Parent?.Title}</font> <font class='fontSize-s stratum-bold-italic'>{CurrentChoice?.Value?.Index+1}/{MainMenu?.Options?.Count}</font></font><br>");
         }
->>>>>>> Stashed changes
 
         while (i < VisibleOptions && option != null )
-        {
-            if (option.Value.Parent?.Title != "")
-            {
-                builder.AppendLine($"{Localizer?["menu.title.prefix"]}{option.Value.Parent?.Title}</u><font color='white'> Item: {n}/{MainMenu.Options?.Count}<br>");
-            }
-            
+        { 
             if (option == CurrentChoice)
             {
-                builder.AppendLine($"{Localizer?["menu.selection.left"]} <font class='fontSize-m' color='white'>{option.Value.OptionDisplay}</font> {Localizer?["menu.selection.right"]}<br>");
+                builder.AppendLine($"{Localizer?["menu.selection.left"]} <font class='fontSize-m' color='white'>{option?.Value?.OptionDisplay}</font> {Localizer?["menu.selection.right"]}<br>");
             }
             else
             {
-                builder.AppendLine($"<font class='fontSize-m' color='white'>{option.Value.OptionDisplay}</font><br>");
+                builder.AppendLine($"<font class='fontSize-m' color='white'>{option?.Value?.OptionDisplay}</font><br>");
             }
 
-            option = option.Next;
+            option = option?.Next;
             i++;
             n++;
         }

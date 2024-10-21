@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "stm13hasP9U=",
+  "dgSpecHash": "EmAumglCRTM=",
   "success": true,
   "projectFilePath": "C:\\Users\\nickj\\OneDrive\\Documents\\CS2\\plugins\\WASDMenuAPI\\WASDMenuAPI\\WASDMenuAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\nickj\\.nuget\\packages\\counterstrikesharp.api\\1.0.246\\counterstrikesharp.api.1.0.246.nupkg.sha512",
+    "C:\\Users\\nickj\\.nuget\\packages\\counterstrikesharp.api\\1.0.282\\counterstrikesharp.api.1.0.282.nupkg.sha512",
     "C:\\Users\\nickj\\.nuget\\packages\\mcmaster.netcore.plugins\\1.4.0\\mcmaster.netcore.plugins.1.4.0.nupkg.sha512",
     "C:\\Users\\nickj\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\nickj\\.nuget\\packages\\microsoft.dotnet.apicompat.task\\8.0.203\\microsoft.dotnet.apicompat.task.8.0.203.nupkg.sha512",
